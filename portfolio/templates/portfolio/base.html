@@ -1,0 +1,54 @@
+{% load static %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="{% static 'portfolio/base.css' %}" rel="stylesheet" type="text/css">
+
+    <title>Minki's Portfolio</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="d-flex justify-content-between w-100 container">
+                <div class="d-flex" id="menus">
+                    <svg width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><path d="M511.981,118.509c-0.135-2.956-1.892-5.726-4.565-7.04l-159.24-79.62c-3.776-1.887-8.363-0.64-10.664,2.898 L229.916,200.282l-55.413-85.891c-0.796-1.235-1.945-2.264-3.259-2.922l-159.24-79.62C6.582,29.138,0,33.218,0,39.268v79.621 c0,4.581,3.712,8.294,8.294,8.294c4.581,0,8.294-3.712,8.294-.294V52.687l142.652,71.326v335.32L16.587,388.008V154.277 c0-4.581-3.712-8.294-8.294-8.294c-4.581,0-8.294,3.712-8.294,8.294v238.857c0,3.142,1.775,6.013,4.585,7.418l159.24,79.62  c5.427,2.714,12.003-1.375,12.003-7.418V318.087l324.17,162.085c5.427,2.714,12.003-1.375,12.003-7.418V118.888 C512,118.76,511.987,118.636,511.981,118.509z M175.827,299.541v-152.5l145.239,225.12L175.827,299.541z M495.413,459.335 l-139.34-69.671l108.576-186.993c2.299-3.961,0.952-9.037-3.009-11.337c-3.96-2.298-9.036-0.953-11.337,3.009L344.094,377.258 L239.77,215.555L347.383,49.998l144.717,72.359l-26.387,45.446c-2.299,3.961-0.952,9.037,3.009,11.337  c3.958,2.297,9.035,0.953,11.337-3.009l15.354-26.443V459.335z" fill="#000" /></g></g></svg>
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                            <a class="nav-link menu" href="{% url 'portfolio:home' %}"><img src="{% static 'portfolio/home.svg' %}">Portfolio<span class="sr-only"></span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu" href="{% url 'blog:all_blogs' %}"><img src="{% static 'portfolio/message-square.svg' %}">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu" href="{% static 'portfolio/random_pdf.pdf' %}" target="_blank"><img src="{% static 'portfolio/download.svg' %}">Resume</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="d-flex" id="navbarNav2">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                        <a class="nav-link" href="https://www.linkedin.com/in/minki-kim-219392199/" target="_blank"><img src="{% static 'portfolio/linkedin.svg' %}"> <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/wer153" target="_blank"><img src="{% static 'portfolio/github.svg' %}"></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="mailto:77wer153@gmail.com"><img src="{% static 'portfolio/mail.svg' %}"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {% block content %}{% endblock %}
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    </body>
+</html>

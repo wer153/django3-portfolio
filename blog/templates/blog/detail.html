@@ -1,0 +1,39 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'blog/blog.css' %}" rel="stylesheet" type="text/css">
+<br><br>
+<div class="container">
+    <h3 class="text-center">{{blog.title}}</h3>
+    <div class="text-center">
+        <time>{{blog.date|date:'y. m. d.'}}</time>
+        <div>
+            <a href="{% url 'blog:all_blogs' %}"><img src="{% static 'blog/arrow-left.svg' %}"></a>
+        </div>
+    </div>
+    <br>
+    <div class="blog-text">
+        <p class="">{{blog.text|safe|linebreaks}}</p>
+    </div>
+    <br>
+    <div class="nav-center">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+          {% if prev_index != second_prev_index %}
+            <li class="page-item"><a class="page-link" href="{% url 'blog:detail' second_prev %}">{{second_prev_index}}</a></li>
+          {% endif %}
+          {% if prev_index != curr %}
+            <li class="page-item"><a class="page-link" href="{% url 'blog:detail' prev %}">{{prev_index}}</a></li>
+          {% endif %}
+            <li class="page-item active"><a class="page-link" href="#">{{curr}}</a></li>
+          {% if next_index != curr %}
+            <li class="page-item"><a class="page-link" href="{% url 'blog:detail' next %}">{{next_index}}</a></li>
+          {% endif %}
+          {% if next_index != second_next_index %}
+            <li class="page-item"><a class="page-link" href="{% url 'blog:detail' second_next %}">{{second_next_index}}</a></li>
+          {% endif %}
+          </ul>
+        </nav>
+    </div>
+</div>
+{% endblock %}
